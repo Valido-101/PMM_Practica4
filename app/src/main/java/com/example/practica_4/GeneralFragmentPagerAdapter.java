@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class GeneralFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "Animales", "Musica", "Pelota" };
+    final int PAGE_COUNT = 4;
+    private String tabTitles[] = new String[] { "Animales", "Musica", "Vídeo", "Pelota" };
     private Context context;
 
     public GeneralFragmentPagerAdapter(FragmentManager fm, Context context) {
@@ -29,6 +29,7 @@ public class GeneralFragmentPagerAdapter extends FragmentPagerAdapter {
         Fragmento_pelota f_p = Fragmento_pelota.newInstance();
         Fragmento_animales f_a = Fragmento_animales.newInstance();
         Fragmento_musica f_m = Fragmento_musica.newInstance();
+        Fragmento_Video f_v = Fragmento_Video.newInstance();
 
         switch(position)
         {
@@ -39,6 +40,8 @@ public class GeneralFragmentPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return f_m;
             case 2:
+                return f_v;
+            case 3:
                 return f_p;
         }
 
