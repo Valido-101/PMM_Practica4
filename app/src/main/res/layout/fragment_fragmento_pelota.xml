@@ -11,4 +11,11 @@
         android:layout_height="match_parent"
         android:text="Fragmento Pelota"/>
 
+    <ImageView
+        android:id="@+id/pelota"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="100dp"
+        android:src="@drawable/basketball"/>
+
 </FrameLayout>

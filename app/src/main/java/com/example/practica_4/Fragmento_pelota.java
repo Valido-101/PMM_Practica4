@@ -1,12 +1,19 @@
 package com.example.practica_4;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -14,10 +21,14 @@ import android.widget.TextView;
  * Use the {@link Fragmento_pelota#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragmento_pelota extends Fragment {
+public class Fragmento_pelota extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
+    ImageView imageView;
+    Animation bote;
+    //static Context context;
 
     // TODO: Rename and change types of parameters
 
@@ -34,7 +45,19 @@ public class Fragmento_pelota extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static Fragmento_pelota newInstance() {
         Fragmento_pelota fragment = new Fragmento_pelota();
+        //context = pcontext;
         return fragment;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        imageView = view.findViewById(R.id.pelota);
+
+        imageView.setOnClickListener(this::onClick);
+
+        bote = AnimationUtils.loadAnimation(getContext(), R.anim.botar);
     }
 
     @Override
@@ -47,5 +70,10 @@ public class Fragmento_pelota extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragmento_pelota, container, false);
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        imageView.startAnimation(bote);
     }
 }
