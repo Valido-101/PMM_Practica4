@@ -1,12 +1,17 @@
 package com.example.practica_4;
 
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,5 +48,20 @@ public class Fragmento_Video extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragmento__video, container, false);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final VideoView videoView = getView().findViewById (R.id.videoView2);
+
+        Uri video = Uri.parse("android.resource://com.example.practica_4/" + R.raw.video_willyrex);
+        videoView.setVideoURI(video);
+
+        MediaController mediaController = new MediaController (getContext());
+        mediaController.setAnchorView (videoView);
+        videoView.setMediaController (mediaController);
+        videoView.start ();
     }
 }

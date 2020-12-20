@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragmento_musica">
+    tools:context=".Fragmento_musica"
+    android:background="@color/teal_700">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragmento Música" />
+        android:id="@+id/music_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music Player"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/pmdm"
+        android:layout_below="@id/music_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PMDM"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:textColor="@color/yellow"/>
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pmdm"
+        android:src="@drawable/ciervo"/>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="130dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canción Pokémon"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/seekbar"/>
+
+    <Button
+        android:id="@+id/btn_forward_5secs"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="80dp"
+        android:text=">>"/>
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn_forward_5secs"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="80dp"
+        android:text=">"/>
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn_play"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="80dp"
+        android:text="||"/>
+
+    <Button
+        android:id="@+id/btn_backward_5secs"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btn_pause"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/backwards_5secs"/>
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 min, 0 sec"
+        android:layout_toLeftOf="@id/seekbar"
+        android:layout_above="@id/btn_forward_5secs"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 min, 35 sec"
+        android:layout_toRightOf="@id/seekbar"
+        android:layout_above="@id/btn_forward_5secs"
+        android:layout_marginBottom="10dp"/>
+
+</RelativeLayout>
