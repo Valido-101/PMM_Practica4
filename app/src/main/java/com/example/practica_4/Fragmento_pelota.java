@@ -26,8 +26,12 @@ public class Fragmento_pelota extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
+    //Vista necesaria para ejecutar la animación
     ImageView imageView;
+
+    //Objeto de tipo animation
     Animation bote;
+
     //static Context context;
 
     // TODO: Rename and change types of parameters
@@ -43,12 +47,15 @@ public class Fragmento_pelota extends Fragment implements View.OnClickListener {
      * @return A new instance of fragment Fragmento_pelota.
      */
     // TODO: Rename and change types and number of parameters
+    //Método necesario para instanciar el fragmento
     public static Fragmento_pelota newInstance() {
         Fragmento_pelota fragment = new Fragmento_pelota();
         //context = pcontext;
         return fragment;
     }
 
+    //Método perteneciente al ciclo de vida de un fragmento. Encontramos el ImageView, le establecemos
+    // un OnClickListener y cargamos la animación usando el recurso xml de la carpeta anim
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -65,6 +72,7 @@ public class Fragmento_pelota extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
     }
 
+    //Cada vez que se cree la vista, usamos el inflater
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,6 +80,7 @@ public class Fragmento_pelota extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    //Cada vez que hagamos click, iniciamos la animación
     @Override
     public void onClick(View v) {
         imageView.startAnimation(bote);
