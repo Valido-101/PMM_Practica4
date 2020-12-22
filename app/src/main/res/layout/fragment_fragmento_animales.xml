@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Empezar"
+        android:text="@string/empezar"
         android:background="@color/cardview_shadow_start_color"
         android:textColor="@color/black"
         />
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Acabar"
+        android:text="@string/acabar"
         android:background="@color/cardview_shadow_start_color"
         android:textColor="@color/black"
         android:enabled="false"
