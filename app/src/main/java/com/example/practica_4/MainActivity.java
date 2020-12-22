@@ -14,12 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Get the ViewPager and set it's PagerAdapter so that it can display items
+        //Obtenemos el ViewPager y le seteamos su PagerAdapter para que pueda mostrar elementos
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new GeneralFragmentPagerAdapter(getSupportFragmentManager(),
                 MainActivity.this));
 
-        // Give the TabLayout the ViewPager
+        //Le damos el ViewPager al TabLayout
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
     }
