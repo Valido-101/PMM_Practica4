@@ -33,6 +33,7 @@ public class Fragmento_Video extends Fragment {
      * @return A new instance of fragment Fragmento_pelota.
      */
     // TODO: Rename and change types and number of parameters
+    //Método para instanciar el fragmento
     public static Fragmento_Video newInstance() {
         Fragmento_Video fragment = new Fragmento_Video();
         return fragment;
@@ -43,6 +44,7 @@ public class Fragmento_Video extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    //Método del ciclo de vida del fragmento que se ejecuta al crear una vista. Inflamos la vista con el inflater
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,18 +52,24 @@ public class Fragmento_Video extends Fragment {
         return view;
     }
 
+    //Método del ciclo de vida del fragmento que se ejecuta después de una vista (se asegura de que ya ha sido creada)
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final VideoView videoView = getView().findViewById (R.id.videoView2);
+        //Obtenemos el videoview
+        final VideoView videoView = getView().findViewById (R.id.videoView);
 
+        //Creamos la uri del vídeo tomando el recurso en la carpeta raw
         Uri video = Uri.parse("android.resource://com.example.practica_4/" + R.raw.video_willyrex);
+        //Establecemos la uri del videoView con la creada anteriormente
         videoView.setVideoURI(video);
 
+        //Creamos el media controller
         MediaController mediaController = new MediaController (getContext());
+        //Le asignamos el videoView
         mediaController.setAnchorView (videoView);
+        //Asignamos el mediaController al videoView
         videoView.setMediaController (mediaController);
-        videoView.start ();
     }
 }
